@@ -24,12 +24,14 @@
 
    ```bash
    git clone git@github.com:xjn-La-La-land/ysyx-setup.git
+   # 或者可以直接使用 **压缩包**，压缩包解压后其中就有 ysyx-env 脚本~
    ```
 
 3. 运行脚本来下载实验代码
 
     ```bash
     bash ysyx-env.sh init # 下载 nemu, npc, ysyxSoC, abstarct-machine, am-kernels 和 RT-thread
+    source ~/.bashrc
     
     # 具体运行的命令如下：
     git clone -b ysyx-final git@github.com:xjn-La-La-land/ysyx-workbench.git # 下载 ysyx-workbench 中的内容
