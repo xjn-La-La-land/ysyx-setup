@@ -18,7 +18,7 @@ case $1 in
 			echo "ysyx-workbench is already initialized, skipping..."
 		fi
 		while [ ! -d ysyx-workbench ]; do
-			git clone -b ysyx-final git@github.com:xjn-La-La-land/ysyx-workbench.git
+			git clone -b npc-O3 git@github.com:xjn-La-La-land/ysyx-workbench.git
 		done
 		addenv NEMU_HOME ysyx-workbench/nemu
 		addenv NPC_HOME  ysyx-workbench/npc
@@ -40,6 +40,7 @@ case $1 in
 		;;
 	rtt)
 		cd $RT_HOME
+		make init
 		make ARCH=riscv32-npcsoc run
 		;;
 	cpu-test)
