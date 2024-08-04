@@ -33,7 +33,7 @@
    sudo mv ../bin/espresso /usr/local/bin
    ```
 
-2. 除此之外，运行 `NPC ` 还需要安装 `llvm` 和 `SDL` 库
+2. 除此之外，运行 `NPC` 还需要安装 `llvm` 和 `SDL` 库
 
    ```bash
    # llvm 库用于支持 itrace
@@ -42,17 +42,23 @@
    sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
    ```
 
+   最后，运行 `RT-thread` 需要安装 `scons` (**a software construction tool**)
+
+   ```bash
+   sudo apt install scons
+   ```
+
 3. 下载 `ysyx-env.sh` 脚本
 
    ```bash
    git clone git@github.com:xjn-La-La-land/ysyx-setup.git
-   cd ysyx-setup
    # 或者可以直接使用 **压缩包**，压缩包解压后其中就有 ysyx-env 脚本~
    ```
 
 4. 运行脚本来下载实验代码
 
     ```bash
+    cd ysyx-setup
     bash ysyx-env.sh init # 下载 nemu, npc, ysyxSoC, abstarct-machine, am-kernels 和 RT-thread
     source ~/.bashrc
     
@@ -68,6 +74,7 @@
    
    # 具体运行的命令如下：
    cd $RT_HOME
+   make init
    make ARCH=riscv32-npcsoc run
    ```
 
